@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#1F1C2C"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_gravity="center_horizontal">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchSaveMovieButton"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/save_icon_background"
+        />
+
+    <View
+        android:id="@+id/playMovieButtonBackground"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="314dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/play_movie_background"
+        app:layout_constraintTop_toBottomOf="@id/searchSaveMovieButton"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/playMovieButton"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/searchSaveMovieButton"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/play_button"
+        />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        >
+        <ImageView
+            android:id="@+id/searchItemImageView"
+            android:layout_width="125dp"
+            android:layout_height="108dp"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/item_image"
+            android:translationZ="100dp"
+            app:shapeAppearanceOverlay="@style/roundItemImageView" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/searchItemMovieName"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageCardView"
+        android:layout_marginTop="30dp"
+        android:lines="1"
+        android:fontFamily="@font/jannabold"
+        android:text="Harry Potter 7"
+        android:translationZ="100dp"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        />
+
+
+    <TextView
+        android:id="@+id/movieFiction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/searchItemMovieName"
+        app:layout_constraintStart_toEndOf="@id/imageCardView"
+        android:text="Eng | Fiction | 2h10m"
+        android:fontFamily="@font/jannabold"
+        android:textSize="13dp"
+        android:translationZ="100dp"
+        android:textColor="#A5A5A5"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@id/imageCardView"
+        app:layout_constraintTop_toBottomOf="@id/movieFiction"
+        android:translationZ="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:alpha="1.5"
+        android:background="@drawable/search_item_rating_background"
+        >
+
+        <ImageView
+            android:id="@+id/ratingImageView"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:translationZ="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/rating_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewVote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:translationZ="100dp"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:fontFamily="@font/jannabold"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ratingImageView"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0.3"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/search_item_background"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

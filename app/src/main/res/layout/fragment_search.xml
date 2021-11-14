@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#1F1C2C"
+    android:layout_height="match_parent"
+    tools:context="com.example.movie.ui.search.SearchFragment">
+
+    <ProgressBar
+        android:id="@+id/searchProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/progress_start"
+        android:visibility="invisible"
+        android:indeterminateBehavior="cycle"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"  />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="293dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:hint="search.."
+        android:textColor="#DDDDDD"
+        android:textSize="15dp"
+        android:textColorHint="#DDDDDD"
+        android:paddingStart="20dp"
+        android:backgroundTint="#7E7C84"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bottom_navigation_shape"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@id/searchEditText"
+        app:layout_constraintEnd_toStartOf="@id/guideline7"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/search_fragment_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/search_item"
+        android:layout_marginTop="100dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+        app:layout_constraintEnd_toEndOf="@id/guideline7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        />
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

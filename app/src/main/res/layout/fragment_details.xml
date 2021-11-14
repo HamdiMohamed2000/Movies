@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1F1C2C"
+    tools:context="com.example.movie.ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1F1C2C"
+        android:paddingBottom="40dp"
+        tools:context="com.example.movie.ui.details.DetailsFragment">
+
+        <ProgressBar
+            android:id="@+id/detailsProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:indeterminateTint="@color/progress_start"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle_backToPre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/jannabold"
+            android:text="Details"
+            android:drawablePadding="20dp"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/arrow"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSaveMovie"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/ic_save"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageCardView"
+            android:layout_width="340dp"
+            android:layout_height="204dp"
+            android:layout_marginTop="80dp"
+            app:cardCornerRadius="39dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline5"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/moviePosterDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/movie_poster" />
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="140dp"
+                android:background="@drawable/blur"
+                android:layout_marginStart="180dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/play_button"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="3dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Watch now"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="7dp"/>
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <ImageView
+            android:id="@+id/ratingImageView"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/rating_image"
+            android:translationZ="100dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageCardView"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/imageCardView" />
+
+        <TextView
+            android:id="@+id/homePlayNowVote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/jannabold"
+            android:text="4.5"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:translationZ="100dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageCardView"
+            app:layout_constraintStart_toEndOf="@id/ratingImageView"
+            app:layout_constraintTop_toTopOf="@id/imageCardView" />
+
+        <TextView
+            android:id="@+id/detailsMovieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/jannabold"
+            android:gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Captain America: Civil War "
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline5"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/imageCardView" />
+
+        <TextView
+            android:id="@+id/movieDetailsEng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/jannabold"
+            android:gravity="center"
+            android:text="Eng | Action | 2h10m"
+            android:textColor="#A5A5A5"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline5"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/detailsMovieName" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="#4F4F4F"
+            app:layout_constraintTop_toBottomOf="@id/movieDetailsEng" />
+
+        <TextView
+            android:id="@+id/storyLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/jannabold"
+            android:text="Story line"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/descriptionStoryLine"
+            android:layout_width="337dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/jannabold"
+            android:text="@string/MovieStoryLine"
+            android:textColor="#A5A5A5"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/storyLine" />
+
+        <TextView
+            android:id="@+id/recommended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/jannabold"
+            android:text="Recommended"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/descriptionStoryLine" />
+
+
+        <TextView
+            android:id="@+id/recommendedLoadMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="Load More"
+            android:textAlignment="textStart"
+            android:textColor="@color/load_more_tv_color"
+            android:textSize="14dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/recommended"
+            app:layout_constraintEnd_toEndOf="@id/guideline5"
+            app:layout_constraintTop_toTopOf="@id/recommended"
+
+            />
+
+
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recommendedRecyclerView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:visibility="gone"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/guideline5"-->
+<!--            app:layout_constraintStart_toStartOf="@id/guideline4"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/recommended"-->
+<!--            tools:listitem="@layout/movie_item" />-->
+
+<!--        <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--            android:id="@+id/shimmerViwe"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/recommended"-->
+<!--            >-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <include layout="@layout/shimmer_movie_item" />-->
+<!--                <include layout="@layout/shimmer_movie_item" />-->
+<!--                <include layout="@layout/shimmer_movie_item" />-->
+
+
+<!--            </LinearLayout>-->
+
+<!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintRecommended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guideline5"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/recommended">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendedRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingClass"
+                android:visibility="gone"
+                tools:listitem="@layout/movie_item" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerViwe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/shimmer_movie_item" />
+                    <include layout="@layout/shimmer_movie_item" />
+                    <include layout="@layout/shimmer_movie_item" />
+
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

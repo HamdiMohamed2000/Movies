@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundimageview" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">39dp</item>
+        <item name="color">#fff</item>
+
+    </style>
+
+    <style name="roundItemImageView" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">17dp</item>
+        <item name="color">#fff</item>
+
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+
+</resources>

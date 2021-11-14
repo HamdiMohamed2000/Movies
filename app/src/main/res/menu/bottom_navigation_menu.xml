@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeFragment"
+        android:title=""
+        android:icon="@drawable/home_selector"
+        android:iconTint="@color/white"
+        />
+
+    <item android:id="@+id/searchFragment"
+        android:title=""
+        android:icon="@drawable/search_selector"
+        android:iconTint="@color/white"/>
+
+    <item android:id="@+id/savedFragment"
+        android:title=""
+        android:icon="@drawable/save_selector"
+        android:iconTint="@color/white"/>
+
+</menu>
