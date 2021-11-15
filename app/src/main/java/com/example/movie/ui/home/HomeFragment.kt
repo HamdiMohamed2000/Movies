@@ -186,7 +186,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnMovieItemCl
                         )
                             .show()
 
-                        Log.e("HMD", "An error occured ${message}")
+                        binding.shimmerViwe.visibility = VISIBLE
+
 
                     }
                 }
@@ -216,8 +217,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnMovieItemCl
                             "An error occured ${message.toString()}",
                             Toast.LENGTH_LONG
                         )
+
                             .show()
-                        Log.e("HMD", "An error occured ${message}")
+                        topRatedshimmerViwe.visibility = VISIBLE
+
                     }
                 }
                 is Resource.Loading -> {
@@ -248,7 +251,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnMovieItemCl
                             Toast.LENGTH_LONG
                         )
                             .show()
-                        Log.e("HMD", "An error occured ${message}")
+                        binding.upcomingshimmerViwe.visibility = VISIBLE
                     }
                 }
                 is Resource.Loading -> {
@@ -289,6 +292,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnMovieItemCl
                             Toast.LENGTH_LONG
                         )
                             .show()
+                        binding.shimmerViwePoster.visibility = VISIBLE
                     }
                 }
                 is Resource.Loading -> {
